@@ -1,0 +1,120 @@
+@charset "utf-8";
+$bai:100%; //
+$jc:justify-content;
+$ai:align-items;
+$warning:#ff9900;
+$fontSize:12px;
+@mixin borderstyle($style:solid, $size:1px, $color:#ccc) {
+    border: $size $style $color;
+}
+
+// 水平垂直居中
+@mixin center($width:null, $height:null) {
+    @if $width and $height {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        display: block;
+        transform: translate(-50%, -50%);
+        // margin-left: -($width/2);
+        // margin-top: -($height/2);//一直子元素宽高
+    }
+}
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: " "; // 1
+        display: table; // 2
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+//单行省略
+@mixin ellipsis() {
+    //设置文本宽高
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin Mul_ellipsis($num) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $num;
+    -webkit-box-orient: vertical;
+}
+
+// 宽高
+@mixin mySize($width, $height:$width) {
+    width: $width;
+    height: $height;
+}
+
+// 上左
+@mixin positionLeft ($left, $top) {
+    position: absolute;
+    top: $top;
+    left: $left;
+}
+
+@mixin positionRight ($right, $bottom) {
+    position: absolute;
+    bottom: $bottom;
+    right: $right;
+}
+
+html,
+body {
+    height: $bai;
+}
+
+body {
+    display: flex;
+    #{$jc}: center;
+    #{$ai}: center;
+}
+
+%a {
+    width: 100%;
+    height: 100%;
+}
+
+.banner {
+    position: relative;
+    @include borderstyle(2px, solid, red);
+    @include mySize(900px, 549px);
+    margin: 50px auto;
+    ul {
+        @include mySize(100%, 100%);
+        position: relative;
+        li {
+            opacity: 0;
+            @extend %a;
+            @include positionLeft(0px, 0px);
+            &:first-child {
+                opacity: 1;
+            }
+        }
+        img {
+            @extend %a;
+        }
+    }
+    ol {
+        @include positionRight(0px, 0px);
+        li {
+            @include mySize(20px, 20px);
+            border-radius: 50%;
+            margin-right: 5px;
+            background-color: $warning;
+            float: left;
+        }
+        .active {
+            background-color: crimson;
+        }
+    }
+    @import "arrow";
+}

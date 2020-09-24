@@ -1,0 +1,16 @@
+.left {
+    @include positionLeft(10px, 150px);
+    display: none;
+}
+
+.right {
+    @include positionRight(10px, 250px);
+    display: none;
+}
+
+.iconfont {
+    font-size: $fontSize*10;
+    &:hover {
+        color: white;
+    }
+}

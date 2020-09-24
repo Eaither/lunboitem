@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        require.js插件
+        异步加载:
+        无论页面有多少js文件，只需要引入require.js即可
+        解决冲突和依赖
+     -->
+    <script src="./js2/require.js" defer async="true" data-main="./js2/main.js"></script>
+    <!-- 
+        async属性表明这个文件是异步加载，避免网页失去响应。
+        defer属性表明IE不支持async属性，只支持defer，所以把defer也写上。
+
+        data-main属性的作用是指定网页程序的主模块,意思是整个网页的入口代码,所有代码都从这儿开始运行,文件名自定义
+    -->
+    <!-- 
+         利用require.js来定义模块，调用模块，配置模块
+    -->
+</head>
+
+<body>
+    <!-- tab切换的结构 -->
+    <style>
+        .tab {
+            font-size: 14px;
+        }
+        
+        .tab_title {
+            width: 250px;
+            height: 24px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+        
+        .tab_title a {
+            width: 50px;
+            height: 24px;
+            text-align: center;
+            line-height: 24px;
+            display: block;
+            float: left;
+        }
+        
+        .tab_title a.active {
+            background: red;
+        }
+        
+        .tab_content .item {
+            width: 250px;
+            border: 1px solid #ccc;
+            display: none;
+        }
+        
+        .tab_content ul {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        .tab_content li {
+            list-style: none;
+            line-height: 24px;
+        }
+    </style>
+    <div class="tab">
+        <div class="tab_title">
+            <a href="javascript:;" class="active">精选</a>
+            <a href="javascript:;">社会</a>
+            <a href="javascript:;">娱乐</a>
+            <a href="javascript:;">生活</a>
+            <a href="javascript:;">体育</a>
+        </div>
+        <div class="tab_content">
+            <div class="item" style="display:block">
+                <ul>
+                    <li><a href="#">韩国数万名医生集体罢工推荐</a></li>
+                    <li><a href="#">日本大阪世博会会徽公布资讯</a></li>
+                    <li><a href="#">华春莹再批纳瓦罗：他谎话连篇热点</a></li>
+                    <li><a href="#">又一品牌宣布：全面退出！新闻</a></li>
+                    <li><a href="#">33名博士被清退，因为“失联”？热议</a></li>
+                    <li><a href="#">浙江舟山持刀伤人案致2死1伤关注</a></li>
+                </ul>
+            </div>
+            <div class="item">
+                <ul>
+                    <li><a href="#">巩俐为老公庆生 一同切蛋糕大秀恩爱</a></li>
+                    <li><a href="#">日本大阪世博会会徽公布资讯</a></li>
+                    <li><a href="#">33名博士被清退，因为“失联”？热议</a></li>
+                    <li><a href="#">33名博士被清退，因为“失联”？热议</a></li>
+                    <li><a href="#">33名博士被清退，因为“失联”？热议</a></li>
+                    <li><a href="#">33名博士被清退，因为“失联”？热议</a></li>
+                </ul>
+            </div>
+            <div class="item">
+                <ul>
+                    <li><a href="#">女子2次抢金店：想去监狱里生活</a></li>
+                    <li><a href="#">小伙给空姐女友过七夕，突然被抓！</a></li>
+                    <li><a href="#">一女士花74万买了件衣服</a></li>
+                    <li><a href="#">太难!劝病人反被家属打骨折还将被拘</a></li>
+                    <li><a href="#">情侣入睡，男孩突然坐起喊疼……</a></li>
+                    <li><a href="#">成都的哥跳河救人失踪</a></li>
+                </ul>
+            </div>
+            <div class="item">
+                <ul>
+                    <li><a href="#">华春莹再批纳瓦罗：他谎话连篇热点</a></li>
+                    <li><a href="#">日本大阪世博会会徽公布资讯</a></li>
+                    <li><a href="#">又一品牌宣布：全面退出！新闻</a></li>
+                    <li><a href="#">韩国数万名医生集体罢工推荐</a></li>
+                    <li><a href="#">33名博士被清退，因为“失联”？热议</a></li>
+                    <li><a href="#">浙江舟山持刀伤人案致2死1伤关注</a></li>
+                </ul>
+            </div>
+            <div class="item">
+                <ul>
+                    <li><a href="#">浙江舟山持刀伤人案致2死1伤关注</a></li>
+                    <li><a href="#">韩国数万名医生集体罢工推荐</a></li>
+                    <li><a href="#">华春莹再批纳瓦罗：他谎话连篇热点</a></li>
+                    <li><a href="#">又一品牌宣布：全面退出！新闻</a></li>
+                    <li><a href="#">33名博士被清退，因为“失联”？热议</a></li>
+                    <li><a href="#">日本大阪世博会会徽公布资讯</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <input type="checkbox" class="allselect">全选<br/>
+    <input type="checkbox">1<br/>
+    <input type="checkbox">2<br/>
+    <input type="checkbox">3<br/>
+    <input type="checkbox">4<br/>
+    <input type="checkbox">5<br/>
+    <input type="checkbox">6<br/>
+</body>
+
+
+</html>
